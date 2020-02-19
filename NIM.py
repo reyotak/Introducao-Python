@@ -17,19 +17,19 @@ def main():
 
     if modo == 2:
        campeonato()
-        
+
     if modo !=1 and modo !=2:
         print("Modo inválido!!!")
 
 def usuario_escolhe_jogada(n,m):
     ptp = int(input("Quantas peças você vai tirar?"))
-    
+
     #Passagem anti roubo
     while ptp > m or ptp <=0:
         print("Oops! Jogada inválida! Tente de novo")
         ptp = int(input("Quantas peças você vai tirar? "))
-    #Fim do anti roubo   
-       
+    #Fim do anti roubo
+
     print("Voce tirou",ptp,"peça(s).")
     n = n - ptp
     print("Agora resta apenas",n,"peça no tabuleiro")
@@ -39,7 +39,7 @@ def usuario_escolhe_jogada(n,m):
 def computador_escolhe_jogada(n,m):
     ptc = n % (m + 1)
     if ptc == 0:
-        ptc = m    
+        ptc = m
     print("O computador tirou",ptc,"peça(s).")
     n = n - ptc
     print("Agora resta apenas",n,"peça no tabuleiro")
@@ -50,7 +50,8 @@ def partida():
     n = int(input("Quantas peças? "))
     m = int(input("Limite de peças por jogada? "))
     while (n <= 1 or n <=m or m<=0):
-        print("Deve haver ao menos 2 peças inicialmente e ser retirado no máximo uma peça a menos do que o número de peás inicias!!!""\n")
+        print("Deve haver ao menos 2 peças inicialmente e ser retirado no máximo""
+            ""uma peça a menos do que o número de peás inicias!!!""\n")
         n = int(input("Quantas peças? "))
         m = int(input("Limite de peças por jogada? "))
 
@@ -63,10 +64,10 @@ def partida():
         #Vez do PC
             ptc = computador_escolhe_jogada(n,m)
             n= n - ptc
-                
+
         print("Fim do jogo! O computador ganhou!")
 
-    #Computador comeca        
+    #Computador comeca
     else:
         print ("O computador começa! :DD")
         while n > 0:
@@ -88,10 +89,5 @@ def campeonato():
     partida()
     print("**** Final do Campeonato! ****""\n")
     print( "Placar: Você 0 X 3 Computador")
-    
+
 main()
-
-
-
-
-
